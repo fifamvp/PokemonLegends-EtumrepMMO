@@ -1,5 +1,33 @@
 # EtumrepMMO
- 
+
+The original repository: https://github.com/kwsch/EtumrepMMO
+
+### Remark
+
+**For players**
+
+Go [.NET6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0), and download the latest .NET Desktop Runtime.
+
+**For developer**
+
+This solution requires building by Visual Studio 2022 with .Net 6.0 installed.
+
+> According to this answer: https://stackoverflow.com/a/69989703, .NET 6 is only supported in Visual Studio 2022.
+>
+> References:
+>
+> https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version
+>
+> https://devblogs.microsoft.com/dotnet/announcing-net-6/
+
+
+
+
+
+### Original Description
+
+------
+
 Reverses initial MMO data to find the origin (group) seed.
 
 Requires [.NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0). The executable can be built with any compiler that supports C# 10.
