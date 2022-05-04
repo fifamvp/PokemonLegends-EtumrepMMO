@@ -6,7 +6,16 @@ The original repository: https://github.com/kwsch/EtumrepMMO
 
 **For players**
 
-Go [.NET6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0), and download the latest .NET Desktop Runtime.
+1. Go [.NET6.0](https://dotnet.microsoft.com/en-us/download/dotnet/6.0), and download the latest .NET Desktop Runtime.
+2. Download release zip file and unzip it.
+3. Create a folder named `mons` and move ".pa8" files into it.
+4. Execute **Run.bat** inside, which creates a folder in the directory named `previous` to backup the ".pa8" files from which the seed has been acquired.
+
+> If Run.bat is executed by CMD, you can pass two parameters after it to represent the number of pokemons spawned in round 1 & 2. (e.g. `Run.bat 8 6`)
+>
+> The previous records are listed in `SeedRecords.txt` .
+
+
 
 **For developer**
 
@@ -19,6 +28,8 @@ This solution requires building by Visual Studio 2022 with .Net 6.0 installed.
 > https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/configure-language-version
 >
 > https://devblogs.microsoft.com/dotnet/announcing-net-6/
+
+
 
 
 
