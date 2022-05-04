@@ -7,8 +7,6 @@ public static class GroupSeedFinder
 {
     public const byte MaxRolls = 32;
 
-    public const string RecordsFileName = "SeedRecords.txt";
-
     #region Seed Detection
 
     /// <inheritdoc cref="FindSeed(IEnumerable{PKM},byte,SpawnerType)"/>
@@ -74,39 +72,10 @@ public static class GroupSeedFinder
                     else
                         continue;
 
-                    // Output
-                    OutputToRecords(ref data, groupSeed);
-
                     return (groupSeed, i);
                 }
             }
         }
         return (default, -1);
-    }
-
-    public static void OutputToRecords(ref IEnumerable<PKM> data, ulong groupSeed)
-    {
-        static void getInfo(PKM source, ref List<string> refList)
-        {
-            string[] arr = source.FileNameWithoutExtension.Split('-');
-
-            if (arr.Length < 2)
-                refList.Add(source.FileNameWithoutExtension);
-
-            refList.Add(string.Format("{0} - {1}", arr[0].Trim(), arr[1].Trim()));
-        }
-
-        List<string> pokemons = new();
-        foreach (var item in data)
-        {
-            getInfo(item, ref pokemons);
-        }
-
-        System.Text.StringBuilder sb = new();
-        sb.Append(string.Format("[{0}] ", DateTime.Now));
-        sb.AppendJoin('|', pokemons);
-        sb.Append(string.Format(", seed:{0}", groupSeed));
-        using StreamWriter sw = new(RecordsFileName, true);
-        sw.WriteLine(sb.ToString());
     }
 }

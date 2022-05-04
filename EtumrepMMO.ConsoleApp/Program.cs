@@ -21,6 +21,11 @@ else
     {
         Console.WriteLine($"Found seed from input {index + 1}/{inputs.Count}!");
         Console.WriteLine(seed);
+
+        // Add output here
+        int numR1 = args.Length > 0 ? Convert.ToInt32(args[0]) : -1;
+        int numR2 = args.Length > 1 ? Convert.ToInt32(args[1]) : -1;
+        PokeLogger.OutputToRecords(inputs, seed, numR1, numR2);
     }
 }
 
